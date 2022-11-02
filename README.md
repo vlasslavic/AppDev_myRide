@@ -5,7 +5,7 @@ This is the repository for the final project **"myRide"** for Mobile App Dev. F2
 - All files (Project File, Images)
 - Documentation
 
-## [Project Instructions](Project.pdf)
+## [Project Instructions](https://github.com/vlasslavic/AppDev_myRide/blob/main/TermProjectInstructionsAP2.pdf)
 This file contains the guidelines and requirements for every deliverable, presentation and final product pertaining to this project.
 
 ## [Deliverables](/Deliverables)
