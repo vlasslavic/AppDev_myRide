@@ -8,7 +8,7 @@ This is the repository for the final project **"myRide"** for Mobile App Dev. F2
 ## [Project Instructions](https://github.com/vlasslavic/AppDev_myRide/blob/main/TermProjectInstructionsAP2.pdf)
 This file contains the guidelines and requirements for every deliverable, presentation and final product pertaining to this project.
 
-## [Agenda](https://github.com/vlasslavic/AppDev_myRide/)
+## [Agenda](https://github.com/vlasslavic/AppDev_myRide/blob/main/Deliverables/Agenda.md)
 This file contains a checklist for every feature, showing as status (nothing, Started or Done).
 
 ## [Deliverables](/Deliverables)
