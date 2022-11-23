@@ -13,7 +13,7 @@ This document contains the plan of action, and is intended to be used as a task 
 
 | **As a** | **I can**                                                                                      | **Type** |**UI Status**  |**Status** |
 |:--------:|:-----------------------------------------------------------------------------------------------|:--------:|:-------------:|:---------:|
-|  User    | Register, login, and logout (3 features )                                                      |F         | Started       |           |
+|  User    | Register, login, and logout (3 features )                                                      |F         | Started-Veaci | Started-Veaci   |
 |  User  | Add/delete/modify a car to/from my garage (Year/Make/Model/Registration/Color) (3 features).     |F         |               |           |
 |  User  | Add/delete/modify To-Do service lists (3 features).                                              |F, R      |               |           |
 |  User  | Modify my profile (1 features).                                                                  |F, S      |               |           |
