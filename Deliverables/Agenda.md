@@ -11,7 +11,7 @@ This document contains the plan of action, and is intended to be used as a task 
 
 ## Our project will support the following stories:
 
-| **As a** | **I can**                                                                                      | **Type** |**UI Status**  |**Feature Status** |
+| **As a** | **I can**                                                                                      | **Type** |**UI Status**  |**Status** |
 |:--------:|:-----------------------------------------------------------------------------------------------|:--------:|:-------------:|:---------:|
 |  User    | Register, login, and logout (3 features )                                                      |F         | Started       |           |
 |  User  | Add/delete/modify a car to/from my garage (Year/Make/Model/Registration/Color) (3 features).     |F         |               |           |
