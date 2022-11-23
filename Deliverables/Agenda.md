@@ -27,12 +27,12 @@ This document contains the plan of action, and is intended to be used as a task 
 
 
 ## Legend:
-A - Algolia
-C - Call Permission
-F - Firebase
-G - Google Api
-J - Json Fetching
-L - Location Awareness
-N - Firebase Notifications
-R - Recycler View
-S - Firestore
+- A - Algolia
+- C - Call Permission
+- F - Firebase
+- G - Google Api
+- J - Json Fetching
+- L - Location Awareness
+- N - Firebase Notifications
+- R - Recycler View
+- S - Firestore
