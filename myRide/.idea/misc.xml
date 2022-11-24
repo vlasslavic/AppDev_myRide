@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/layout/activity_main.xml" value="0.1592356687898089" />
+        <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/drawable/item_selector.xml" value="0.112" />
+        <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/drawable/round_corner.xml" value="0.112" />
+        <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/layout/activity_create_profile.xml" value="0.5208333333333334" />
+        <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/layout/activity_login.xml" value="0.2078125" />
+        <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/layout/activity_register.xml" value="0.5" />
+        <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/menu/item_menu.xml" value="0.2713541666666667" />
       </map>
     </option>
   </component>

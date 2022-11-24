@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1082801236033",
+    "project_id": "myride-367302",
+    "storage_bucket": "myride-367302.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082801236033:android:7de2e4fe2fedda0ccc7ec0",
+        "android_client_info": {
+          "package_name": "com.example.myride"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082801236033-jrp6vjs1401g7g2p2q3ii3bvkbak6fgs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myride",
+            "certificate_hash": "1b3740187bcec0d1de13ac8ac50c0e7669d3fb0b"
+          }
+        },
+        {
+          "client_id": "1082801236033-aajgoa64p0enrk12oqrip8immqlt4klp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSTvshL44hd8Mye-X5d-O0H07oirgeF4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082801236033-aajgoa64p0enrk12oqrip8immqlt4klp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

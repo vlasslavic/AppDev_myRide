@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">myRide</string>
+    <string name="home_text">Home</string>
+    <string name="like_text">Like</string>
+    <string name="search_text">Search</string>
+    <string name="shop_text">Log Out</string>
 </resources>
