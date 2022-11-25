@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
+
             Intent i = new Intent(MainActivity.this, CreateProfile.class);
             startActivity(i);
         }
@@ -32,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
                 Intent i = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(i); }
         });

@@ -18,14 +18,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.firebase.auth.FirebaseUser;
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "EmailPassword";
 
     private FirebaseAuth mAuth;
-
+    DatabaseReference reff;
     EditText fieldEmail, fieldPassword;
     Button loginButton;
     private Object MultiFactorSignInFragment;
@@ -39,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-
+        reff = FirebaseDatabase.getInstance().getReference().child("users");
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void updateUI(FirebaseUser user){
-
+        reff = FirebaseDatabase.getInstance().getReference().child("users").child(user.getUid());
         Intent i = new Intent(LoginActivity.this, CreateProfile.class);
         i.putExtra("key", user);
         startActivity(i);
