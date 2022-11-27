@@ -21,9 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
     private static final String TAG = "EmailPassword";
-
     private FirebaseAuth mAuth;
-
     EditText fieldEmail, fieldPassword;
     Button emailCreateAccountButton;
 

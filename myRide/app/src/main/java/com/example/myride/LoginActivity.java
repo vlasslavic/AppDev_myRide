@@ -18,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -55,10 +56,38 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void updateUI(FirebaseUser user){
-        reff = FirebaseDatabase.getInstance().getReference().child("users").child(user.getUid());
-        Intent i = new Intent(LoginActivity.this, CreateProfile.class);
-        i.putExtra("key", user);
-        startActivity(i);
+        reff = FirebaseDatabase.getInstance().getReference().child("users");
+        reff.child(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Intent i = new Intent(LoginActivity.this, CreateProfile.class);
+                    i.putExtra("key", user);
+                    startActivity(i);
+                }
+                else {
+                    if((task.getResult().getValue())!=null){
+                        Intent i = new Intent(LoginActivity.this, Dashboard.class);
+                        i.putExtra("key", user);
+                        startActivity(i);
+                    }else {
+                        Intent i = new Intent(LoginActivity.this, CreateProfile.class);
+                        i.putExtra("key", user);
+                        startActivity(i);
+                    }
+                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
+                }
+            }
+        });
+//        if(reff.child(user.getUid()).has()){
+//            Intent i = new Intent(LoginActivity.this, Dashboard.class);
+//            i.putExtra("key", user);
+//            startActivity(i);
+//        }else {
+//            Intent i = new Intent(LoginActivity.this, CreateProfile.class);
+//            i.putExtra("key", user);
+//            startActivity(i);
+//        }
     }
 
 

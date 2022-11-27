@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -55,6 +56,8 @@ public class CreateProfile extends AppCompatActivity {
 
         reff = FirebaseDatabase.getInstance().getReference().child("users");
 
+
+        //Unused method
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -68,21 +71,39 @@ public class CreateProfile extends AppCompatActivity {
             }
         });
 
-
+//Create the user profile
         accButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                int ageEmployee = Integer.parseInt(age.getText().toString().trim());
-//                float height = Float.parseFloat(ht.getText().toString().trim());
-//                Long ph = Long.parseLong(phone.getText().toString().trim());
+                if (!validateForm()) {
+                    return;
+                }
+
                 user.setFullName(name.getText().toString());
                 user.setEmail(mAuth.getCurrentUser().getEmail());
 
                 reff.child(mAuth.getCurrentUser().getUid()).setValue(user);
                 Toast.makeText(getApplicationContext(),
-                        "data inserted successful", Toast.LENGTH_SHORT).show();
+                        "Data inserted successful", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(), Dashboard.class);
+                i.putExtra("key", mAuth.getCurrentUser());
+                startActivity(i);
             }
         });
+    }
+
+    private boolean validateForm() {
+        boolean valid = true;
+
+        String fullName = name.getText().toString();
+        if (TextUtils.isEmpty(fullName)) {
+            name.setError("Required.");
+            valid = false;
+        } else {
+            name.setError(null);
+        }
+
+        return valid;
     }
 
     @Override
