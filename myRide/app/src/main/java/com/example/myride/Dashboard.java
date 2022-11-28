@@ -37,7 +37,7 @@ public class Dashboard extends AppCompatActivity {
     DatabaseReference reff;
 //    Button addCarBtn;
     userModel currentUser;
-    TextView textNickname;
+    TextView textNickname, fullName, carsNumber;
     Button addCarBtn;
 
     @Override
@@ -46,6 +46,8 @@ public class Dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
         addCarBtn = findViewById(R.id.addCarBtn);
         textNickname = findViewById(R.id.textNickname);
+        fullName = findViewById(R.id.textFullName);
+        carsNumber = findViewById(R.id.textCars);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -57,6 +59,17 @@ public class Dashboard extends AppCompatActivity {
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.child("fullName").getValue() != null) {
+                    fullName.setText(snapshot.child("fullName").getValue().toString());}
+                if(snapshot.child("myGarage").getValue() != null){
+                    String count = String.valueOf((snapshot.child("myGarage").getChildrenCount()));
+                    if(count.equals("1")){
+                        carsNumber.setText((snapshot.child("myGarage").getChildrenCount())+" car");
+                    }else{
+                    carsNumber.setText((snapshot.child("myGarage").getChildrenCount())+" cars");
+                    }
+                }
+
                 if (snapshot.child("mainCar").getValue() != null) {
                     String name = snapshot.child("mainCar").getValue().toString();
                     textNickname.setText(name);

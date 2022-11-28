@@ -8,4 +8,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="main_car">Main Car</string>
     <string name="add_a_car">Add a Car</string>
+    <string name="oil_icon">Oil Icon</string>
 </resources>
