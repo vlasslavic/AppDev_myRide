@@ -18,6 +18,7 @@ This document contains the plan of action, and is intended to be used as a task 
 |  User  | Add/delete/modify To-Do service lists (3 features).                                              |F, R      | Started-Andre |           |
 |  User  | Modify my profile (1 features).                                                                  |F, S      |               |           |
 |  User  | Find nearest repair shop on map using GooglePlaces API (1 features).                             |G, J, L   |               |           |
+|  User  | View main car details (1 features).                                                              |F, S, P   | Done          | Done      |
 |  User  | View repair shop details (1 features).                                                           |G, J      |               |           |
 |  User  | Save the shop to favorites (1 features).                                                         |J, F      |               |           |
 |  User  | Search for a service (1 feature).                                                                |A, G      | Started-Andre |           |
@@ -29,10 +30,12 @@ This document contains the plan of action, and is intended to be used as a task 
 ## Legend:
 - A - Algolia
 - C - Call Permission
-- F - Firebase RealTime 
+- F - Firebase RealTime
+- S - Firebase Storage
 - G - Google Api
 - J - Json Fetching
 - L - Location Awareness
 - N - Firebase Notifications
+- P - Picasso 
 - R - Recycler View
-- S - Firestore
+
