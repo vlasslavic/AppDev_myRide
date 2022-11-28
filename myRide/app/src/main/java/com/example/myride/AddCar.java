@@ -104,14 +104,14 @@ public class AddCar extends AppCompatActivity {
                 if (!validateForm()) {
                     return;
                 }
-                uploadImage();
+
                 car.setMake(make.getText().toString());
                 car.setModel(model.getText().toString());
                 car.setYear(year.getText().toString());
                 car.setRegistration(registration.getText().toString());
                 car.setColor(color.getText().toString());
                 car.setNickname(nickname.getText().toString());
-
+//                uploadImage();
 
                 reff.child(mAuth.getCurrentUser().getUid()).child("myGarage").child(nickname.getText().toString()).setValue(car);
 
@@ -122,7 +122,7 @@ public class AddCar extends AppCompatActivity {
 
 //                reff.child().setValue(car);
                 Toast.makeText(getApplicationContext(),
-                        "Data inserted successful", Toast.LENGTH_SHORT).show();
+                        "Vehicle added successfully", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), Dashboard.class);
                 i.putExtra("key", mAuth.getCurrentUser());
                 startActivity(i);
@@ -179,6 +179,7 @@ public class AddCar extends AppCompatActivity {
                         @Override
                         public void onSuccess(Uri uri) {
                             car.setPicture(uri.toString());
+
 //                           databaseReference.push().setValue(uri.toString());
                             Toast.makeText(getApplicationContext(), "Image uploaded successfully", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);

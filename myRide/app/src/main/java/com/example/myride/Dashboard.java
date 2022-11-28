@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
@@ -15,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -30,8 +32,11 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
+import java.io.InputStream;
 import java.io.Serializable;
+import java.net.URL;
 import java.util.Objects;
 
 public class Dashboard extends AppCompatActivity {
@@ -41,6 +46,7 @@ public class Dashboard extends AppCompatActivity {
     userModel currentUser;
     TextView textNickname, fullName, carsNumber;
     Button addCarBtn,myGarageBtn;
+    ImageView carImage;
     String name;
 
     @Override
@@ -52,6 +58,7 @@ public class Dashboard extends AppCompatActivity {
         textNickname = findViewById(R.id.textNickname);
         fullName = findViewById(R.id.textFullName);
         carsNumber = findViewById(R.id.textCars);
+        carImage = findViewById(R.id.imageView8);
         FirebaseStorage storage = FirebaseStorage.getInstance();
 //        StorageReference storageRef = storage.getReference().child("uploads").child("users").child(mAuth.getCurrentUser().getUid());
 //        StorageReference imagesRef = storageRef.child("uploads").child("users").child(name+".jpg");
@@ -67,6 +74,12 @@ public class Dashboard extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.child("fullName").getValue() != null) {
                     fullName.setText(snapshot.child("fullName").getValue().toString());}
+                if (snapshot.child("myGarage").child(snapshot.child("mainCar").getValue().toString()).child("picture").getValue() != null) {
+                    carImage.setVisibility(View.VISIBLE);
+                    Picasso.get().load((snapshot.child("myGarage").child(snapshot.child("mainCar").getValue().toString()).child("picture").getValue()).toString()).into(carImage);
+//                    carImage.setImageDrawable(LoadImageFromWebOperations());
+//                    carImageView.setSrc(LoadImageFromWebOperations(snapshot.child("picture").getValue().toString()));}
+                }
                 if(snapshot.child("myGarage").getValue() != null){
                     String count = String.valueOf((snapshot.child("myGarage").getChildrenCount()));
                     if(count.equals("1")){
@@ -89,6 +102,7 @@ public class Dashboard extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+
 
 
         addCarBtn.setOnClickListener(new View.OnClickListener() {
@@ -134,5 +148,15 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(i);
         }
         return true;
+    }
+
+    public static Drawable LoadImageFromWebOperations(String url) {
+        try {
+            InputStream is = (InputStream) new URL(url).getContent();
+            Drawable d = Drawable.createFromStream(is,"srcName");
+            return d;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
