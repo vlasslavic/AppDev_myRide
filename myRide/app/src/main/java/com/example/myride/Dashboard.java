@@ -15,9 +15,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import com.example.myride.fragments.addCar;
-import com.example.myride.fragments.mainCar;
+
 import com.example.myride.models.userModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,43 +37,54 @@ public class Dashboard extends AppCompatActivity {
     DatabaseReference reff;
 //    Button addCarBtn;
     userModel currentUser;
-
+    TextView textNickname;
+    Button addCarBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        addCarBtn = findViewById(R.id.addCarBtn);
+        textNickname = findViewById(R.id.textNickname);
+
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 //        addCarBtn = findViewById(R.id.addCarBtn);
         reff = FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getUid());
-        FragmentManager fm = getSupportFragmentManager();
-        mainCar fGarage = (mainCar) fm.findFragmentById(R.id.mainCarContainerView);
-        Query mUserReference;
-        Bundle bundle = new Bundle();
 
-// set Fragmentclass Arguments
-                reff.addValueEventListener(new ValueEventListener() {
-                       @Override
-                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                           if(snapshot.child("mainCar").getValue()!=null){
-                           String mainCar = (String) snapshot.child("mainCar").getValue();
-                           bundle.putString("mainCar",  mainCar);
-                           mainCar fragobj = new mainCar();
-                           fragobj.setArguments(bundle);
-                           }
-                         }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+// Lister for Main Car Card
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.child("mainCar").getValue() != null) {
+                    String name = snapshot.child("mainCar").getValue().toString();
+                    textNickname.setText(name);
+                    textNickname.setVisibility(View.VISIBLE);
+                } else {
+                    textNickname.setVisibility(View.INVISIBLE);
+                    addCarBtn.setVisibility(View.VISIBLE);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
 
-                        }
-                });
+
+        addCarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), AddCar.class);
+                startActivity(i);
+            }
+
+        });
+
     }
 
-
-
-    @Override
+                    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflater is the class that converts xml to java Object
         // this inflator converts the menu resource file to java object and deploy on main activity
