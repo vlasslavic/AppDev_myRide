@@ -28,6 +28,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -38,17 +40,21 @@ public class Dashboard extends AppCompatActivity {
 //    Button addCarBtn;
     userModel currentUser;
     TextView textNickname, fullName, carsNumber;
-    Button addCarBtn;
+    Button addCarBtn,myGarageBtn;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         addCarBtn = findViewById(R.id.addCarBtn);
+        myGarageBtn = findViewById(R.id.garageBtn);
         textNickname = findViewById(R.id.textNickname);
         fullName = findViewById(R.id.textFullName);
         carsNumber = findViewById(R.id.textCars);
-
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+//        StorageReference storageRef = storage.getReference().child("uploads").child("users").child(mAuth.getCurrentUser().getUid());
+//        StorageReference imagesRef = storageRef.child("uploads").child("users").child(name+".jpg");
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 //        addCarBtn = findViewById(R.id.addCarBtn);
@@ -66,12 +72,12 @@ public class Dashboard extends AppCompatActivity {
                     if(count.equals("1")){
                         carsNumber.setText((snapshot.child("myGarage").getChildrenCount())+" car");
                     }else{
-                    carsNumber.setText((snapshot.child("myGarage").getChildrenCount())+" cars");
+                        carsNumber.setText((snapshot.child("myGarage").getChildrenCount())+" cars");
                     }
                 }
 
                 if (snapshot.child("mainCar").getValue() != null) {
-                    String name = snapshot.child("mainCar").getValue().toString();
+                    name = snapshot.child("mainCar").getValue().toString();
                     textNickname.setText(name);
                     textNickname.setVisibility(View.VISIBLE);
                 } else {
@@ -90,6 +96,16 @@ public class Dashboard extends AppCompatActivity {
 
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), AddCar.class);
+                startActivity(i);
+            }
+
+        });
+
+        myGarageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MyGarage.class);
                 startActivity(i);
             }
 
