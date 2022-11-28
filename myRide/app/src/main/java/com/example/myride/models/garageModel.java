@@ -3,20 +3,32 @@ package com.example.myride.models;
 public class garageModel {
     String make;
     String model;
-    String nickname;
-    String trim;
+    String registration;
+    String color;
     String year;
+    String picture;
+    String nickname;
     serviceHistoryModel serviceHistory;
 
     public garageModel(){}
 
-    public garageModel(String make, String model, String nickname, String trim, String year, serviceHistoryModel serviceHistory) {
+    public garageModel(String make, String model, String year, String nickname, String registration, String color, String picture, serviceHistoryModel serviceHistory) {
         this.make = make;
         this.model = model;
-        this.nickname = nickname;
-        this.trim = trim;
         this.year = year;
+        this.nickname =nickname;
+        this.registration = registration;
+        this.color = color;
+        this.picture = picture;
         this.serviceHistory = serviceHistory;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public String getMake() {
@@ -36,20 +48,20 @@ public class garageModel {
         this.model = model;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getRegistration() {
+        return registration;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setRegistration(String registration) {
+        this.registration = registration;
     }
 
-    public String getTrim() {
-        return trim;
+    public String getColor() {
+        return color;
     }
 
-    public void setTrim(String trim) {
-        this.trim = trim;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getYear() {
@@ -66,5 +78,13 @@ public class garageModel {
 
     public void setServiceHistory(serviceHistoryModel serviceHistory) {
         this.serviceHistory = serviceHistory;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

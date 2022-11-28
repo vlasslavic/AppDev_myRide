@@ -4,4 +4,8 @@
     <string name="like_text">Like</string>
     <string name="search_text">Search</string>
     <string name="shop_text">Log Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main_car">Main Car</string>
+    <string name="add_a_car">Add a Car</string>
 </resources>
