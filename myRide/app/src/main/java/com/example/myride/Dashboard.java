@@ -86,6 +86,10 @@ public class Dashboard extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Dashboard.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.nav_profile:
+                        startActivity(new Intent(getApplicationContext(),MyProfile.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.nav_search:
                         return true;
                     case R.id.nav_logout:
@@ -93,7 +97,6 @@ public class Dashboard extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),
                                 "You are logged out.", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
-
                         overridePendingTransition(0,0);
                         return true;
                 }

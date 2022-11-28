@@ -11,12 +11,12 @@ This document contains the plan of action, and is intended to be used as a task 
 
 ## Our project will support the following stories:
 
-|**As a**| **I can**                                                                                        | **Type** |**UI Status**  |**Status** |
+|**As a**| **I can**                                                                                        | **Type** |**UI Status**  |**Feature** |
 |:------:|:-------------------------------------------------------------------------------------------------|:--------:|:-------------:|:---------:|
-|  User  | Register, login, and logout (3 features )                                                        |F         | Done-Veaci    | Done-Veaci|
+|  User  | Register, login, and logout (3 features )                                                        |E, F      | Done-Veaci    | Done-Veaci|
 |  User  | Add/delete/modify a car to/from my garage (Year/Make/Model/Registration/Color) (3 features).     |F, R, S   | Started-Veaci |Started-Veaci|
 |  User  | Add/delete/modify To-Do service lists (3 features).                                              |F, R      | Started-Andre |           |
-|  User  | Modify my profile (1 features).                                                                  |F, S      | Started-Veaci |Started-Veaci|
+|  User  | Modify my profile (1 features).                                                                  |F,E, S, P | Done-Veaci    | Done-Veaci|
 |  User  | Find nearest repair shop on map using GooglePlaces API (1 features).                             |G, J, L   |               |           |
 |  User  | View main car details (1 features).                                                              |F, S, P   | Done-Veaci    | Done-Veaci|
 |  User  | View repair shop details (1 features).                                                           |G, J      |               |           |
@@ -30,12 +30,13 @@ This document contains the plan of action, and is intended to be used as a task 
 ## Legend:
 - A - Algolia
 - C - Call Permission
+- E - Firebase Auth
 - F - Firebase RealTime
 - S - Firebase Storage
 - G - Google Api
 - J - Json Fetching
 - L - Location Awareness
 - N - Firebase Notifications
-- P - Picasso 
+- P - Picasso
 - R - Recycler View
 
