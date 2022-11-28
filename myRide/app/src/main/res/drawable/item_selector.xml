@@ -4,6 +4,7 @@
 
     <item android:state_pressed="true" android:color="@color/black"/>
     <item android:state_checked="true" android:color="@color/black"/>
+    <item android:drawable="@drawable/ic_add" android:state_middle="true"/>
     <item android:color="@color/light_white"/>
 
 </selector>
