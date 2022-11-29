@@ -1,14 +1,14 @@
 package com.example.myride.models;
 
 public class garageModel {
-    String make;
-    String model;
-    String registration;
-    String color;
-    String year;
-    String picture;
-    String nickname;
-    serviceHistoryModel serviceHistory;
+    private  String make;
+    private  String model;
+    private  String registration;
+    private  String color;
+    private  String year;
+    private  String picture;
+    private  String nickname;
+    private  serviceHistoryModel serviceHistory;
 
     public garageModel(){}
 
@@ -82,6 +82,20 @@ public class garageModel {
 
     public String getPicture() {
         return picture;
+    }
+
+    @Override
+    public String toString() {
+        return "garageModel{" +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", registration='" + registration + '\'' +
+                ", color='" + color + '\'' +
+                ", year='" + year + '\'' +
+                ", picture='" + picture + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", serviceHistory=" + serviceHistory +
+                '}';
     }
 
     public void setPicture(String picture) {
