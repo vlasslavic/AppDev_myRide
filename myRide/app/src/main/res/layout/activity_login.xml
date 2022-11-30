@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
     tools:layout_editor_absoluteX="-4dp"
-    tools:layout_editor_absoluteY="69dp">
+    tools:layout_editor_absoluteY="69dp"
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/fieldEmail"
@@ -62,4 +63,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fieldPassword"
         app:layout_constraintVertical_bias="0.097" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/bt_sign_in"
+        android:layout_width="305dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:text="LOG IN WITH GOOGLE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:layout_constraintVertical_bias="0.043" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

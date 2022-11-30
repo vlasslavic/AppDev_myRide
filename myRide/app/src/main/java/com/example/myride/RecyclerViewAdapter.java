@@ -51,6 +51,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<viewHolder> {
         holder.ymmText.setText((mGarage.get(position).getYear())+" "+(mGarage.get(position).getMake())+" "+mGarage.get(position).getModel());
         holder.crText.setText((mGarage.get(position).getColor())+" "+(mGarage.get(position).getRegistration()));
 
+//        holder.mView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Here You Do Your Click Magic
+//            });
+
+
 //        holder.deleteBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //
@@ -61,6 +68,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<viewHolder> {
 //
 //        });
 
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(garageModel model);
     }
 
     @Override

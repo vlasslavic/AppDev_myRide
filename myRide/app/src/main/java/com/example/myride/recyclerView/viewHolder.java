@@ -32,9 +32,14 @@ public class viewHolder extends RecyclerView.ViewHolder {
         deleteBtn = itemView.findViewById(R.id.deleteBtn);
         parentLayout = itemView.findViewById(R.id.parentid);
 
-
-
+//        editBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                if (!validateForm()) {
+////                    return;
+////                }
+//
+//            }
+//        });
     }
-
-
 }
