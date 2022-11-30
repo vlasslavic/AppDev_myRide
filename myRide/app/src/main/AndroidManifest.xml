@@ -23,6 +23,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ToDoList"
+            android:exported="false" />
+        <activity
             android:name=".MyProfile"
             android:exported="false">
             <meta-data
