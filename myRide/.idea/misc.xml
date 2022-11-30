@@ -10,7 +10,11 @@
         <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/layout/activity_register.xml" value="0.5" />
         <entry key="..\:/Documents/GitHub/appDev_myRide/AppDev_myRide/myRide/app/src/main/res/menu/item_menu.xml" value="0.2713541666666667" />
-        <entry key="..\:/Users/1934493/Documents/aaa/myRide/app/src/main/res/layout/activity_recyclerview_todolist.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/1934493/Documents/aaa/myRide/app/src/main/res/layout/activity_add_car.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/1934493/Documents/aaa/myRide/app/src/main/res/layout/activity_create_task.xml" value="0.3212962962962963" />
+        <entry key="..\:/Users/1934493/Documents/aaa/myRide/app/src/main/res/layout/activity_my_garage.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/1934493/Documents/aaa/myRide/app/src/main/res/layout/activity_recyclerview_todolist.xml" value="0.33" />
+        <entry key="..\:/Users/1934493/Documents/aaa/myRide/app/src/main/res/layout/activity_to_do_list.xml" value="0.33" />
       </map>
     </option>
   </component>
