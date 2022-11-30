@@ -14,7 +14,7 @@ This document contains the plan of action, and is intended to be used as a task 
 |**As a**| **I can**                                                                                        | **Type** |**UI Status**  |**Feature** |
 |:------:|:-------------------------------------------------------------------------------------------------|:--------:|:-------------:|:---------:|
 |  User  | Register, login, and logout (3 features )                                                        |E, F      | Done-Veaci    | Done-Veaci|
-|  User  | Add/delete/modify a car to/from my garage (Year/Make/Model/Registration/Color) (3 features).     |F, R, S   | Started-Veaci |Started-Veaci|
+|  User  | Add/delete/modify a car to/from my garage (Year/Make/Model/Registration/Color) (3 features).     |F, R, S   | Done-Veaci    |Started-Veaci|
 |  User  | Add/delete/modify To-Do service lists (3 features).                                              |F, R      | Started-Andre |           |
 |  User  | Modify my profile (1 features).                                                                  |F, E, S, P| Done-Veaci    | Done-Veaci|
 |  User  | Find nearest repair shop on map using GooglePlaces API (1 features).                             |G, J, L   |               |           |
@@ -30,7 +30,7 @@ This document contains the plan of action, and is intended to be used as a task 
 ## Legend:
 - A - Algolia
 - C - Call Permission
-- E - Firebase Auth
+- E - Firebase Auth (Credentials + Google Auth)
 - F - Firebase Realtime Database
 - S - Firebase Storage
 - G - Google Api
