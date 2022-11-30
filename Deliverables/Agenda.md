@@ -17,7 +17,7 @@ This document contains the plan of action, and is intended to be used as a task 
 |  User  | Add/delete/modify a car to/from my garage (Year/Make/Model/Registration/Color) (3 features).     |F, R, S   | Done-Veaci    |Started-Veaci|
 |  User  | Add/delete/modify To-Do service lists (3 features).                                              |F, R      | Started-Andre |           |
 |  User  | Modify my profile (1 features).                                                                  |F, E, S, P| Done-Veaci    | Done-Veaci|
-|  User  | Find nearest repair shop on map using GooglePlaces API (1 features).                             |G, J, L   |               |           |
+|  User  | Find nearest repair shop on map using GooglePlaces API (1 features).                             |G, J, L   | started-Ant   |           |
 |  User  | View main car details (1 features).                                                              |F, S, P   | Done-Veaci    | Done-Veaci|
 |  User  | View repair shop details (1 features).                                                           |G, J      |               |           |
 |  User  | Save the shop to favorites (1 features).                                                         |J, F      |               |           |
