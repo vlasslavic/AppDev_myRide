@@ -29,16 +29,7 @@
         app:menu="@menu/item_menu" />
 
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="261dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="60dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/homecar" />
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="150dp"
@@ -50,16 +41,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/garagesect" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="324dp"
-        android:layout_height="256dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/garagecard" />
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="25dp"
@@ -130,7 +112,16 @@
         app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         tools:ignore="TouchTargetSizeCheck" />
-
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="324dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/garagecard" />
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="150dp"
@@ -215,6 +206,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/nearcontainer" />
-
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="261dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="60dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homecar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
