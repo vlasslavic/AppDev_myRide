@@ -83,6 +83,7 @@
 
         <Button
             android:id="@+id/editBtn"
+            android:id="@+id/editBtn"
             android:layout_width="match_parent"
             android:layout_height="12dp"
             android:layout_weight="1"
