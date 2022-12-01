@@ -18,12 +18,12 @@ public class viewHolder extends RecyclerView.ViewHolder {
     public TextView nicknameText;
     public TextView ymmText;
     public TextView crText;
-    public TextView txttask;
-    public TextView txtservice;
+    public TextView txtTask;
+    public TextView txtService;
     Button editBtn;
-    Button btnedit;
+    Button btnEdit;
     public Button deleteBtn;
-    public Button btndelete;
+    public Button btnDelete;
     LinearLayout parentLayout;
     LinearLayout taskLayout;
 
@@ -33,14 +33,14 @@ public class viewHolder extends RecyclerView.ViewHolder {
         nicknameText = itemView.findViewById(R.id.nicknameText);
         ymmText = itemView.findViewById(R.id.ymmText);
         crText = itemView.findViewById(R.id.crText);
-        txttask = itemView.findViewById(R.id.txttobecompleted);
-        txtservice = itemView.findViewById(R.id.txtwhereservice);
+        txtTask = itemView.findViewById(R.id.txttobecompleted);
+        txtService = itemView.findViewById(R.id.txtwhereservice);
         image2 = itemView.findViewById(R.id.imageView2);
         image3 = itemView.findViewById(R.id.imageCompany);
         editBtn = itemView.findViewById(R.id.editBtn);
-        btnedit = itemView.findViewById(R.id.btnedit);
+        btnEdit = itemView.findViewById(R.id.btnedit);
         deleteBtn = itemView.findViewById(R.id.deleteBtn);
-        btndelete = itemView.findViewById(R.id.btndelete);
+        btnDelete = itemView.findViewById(R.id.btndelete);
         parentLayout = itemView.findViewById(R.id.parentid);
         taskLayout = itemView.findViewById(R.id.mainid);
 
