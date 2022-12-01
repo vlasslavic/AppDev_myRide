@@ -115,7 +115,7 @@ public class AddCar extends AppCompatActivity {
 
                 reff.child(mAuth.getCurrentUser().getUid()).child("myGarage").child(nickname.getText().toString()).setValue(car);
 
-                if(reff.child(mAuth.getCurrentUser().getUid()).child("mainCar")==null) {
+                if(reff.child(mAuth.getCurrentUser().getUid()).child("mainCar").toString().isEmpty()) {
                     reff.child(mAuth.getCurrentUser().getUid()).child("mainCar").setValue(nickname.getText().toString());
                 }
 
