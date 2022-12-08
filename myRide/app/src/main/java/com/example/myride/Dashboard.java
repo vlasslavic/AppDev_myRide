@@ -47,7 +47,7 @@ public class Dashboard extends AppCompatActivity {
 //    Button addCarBtn;
     userModel currentUser;
     TextView textNickname, fullName, carsNumber;
-    Button addCarBtn,myGarageBtn;
+    Button addCarBtn,myGarageBtn,googleMapsBtn;
     ImageView carImage;
     String name;
 
@@ -61,6 +61,7 @@ public class Dashboard extends AppCompatActivity {
         fullName = findViewById(R.id.textFullName);
         carsNumber = findViewById(R.id.textCars);
         carImage = findViewById(R.id.imageView8);
+        googleMapsBtn = findViewById(R.id.mapsButton);
         FirebaseStorage storage = FirebaseStorage.getInstance();
 //        StorageReference storageRef = storage.getReference().child("uploads").child("users").child(mAuth.getCurrentUser().getUid());
 //        StorageReference imagesRef = storageRef.child("uploads").child("users").child(name+".jpg");
@@ -162,6 +163,14 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(i);
             }
 
+        });
+
+        googleMapsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), GoogleMaps.class);
+                startActivity(i);
+            }
         });
 
     }
