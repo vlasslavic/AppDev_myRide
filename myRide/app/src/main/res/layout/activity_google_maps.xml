@@ -24,7 +24,7 @@
 
     <Button
         android:id="@+id/searchGoogle"
-        android:layout_width="292dp"
+        android:layout_width="304dp"
         android:layout_height="60dp"
         android:background="@color/black"
         android:backgroundTint="@color/white"
@@ -32,17 +32,17 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintHorizontal_bias="0.401"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintVertical_bias="0.467" />
 
     <EditText
         android:id="@+id/startPoint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Start Point: "
+        android:hint="Start Point : "
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,14 +50,14 @@
         app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.191" />
 
     <EditText
         android:id="@+id/destination"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Destination: "
+        android:hint="Destination : "
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintVertical_bias="0.319" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -81,14 +81,13 @@
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="398dp"
-        android:layout_height="414dp"
+        android:layout_width="379dp"
+        android:layout_height="240dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.878"
         app:srcCompat="@drawable/googlemaps" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
