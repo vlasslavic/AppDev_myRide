@@ -10,17 +10,19 @@ public class userModel {
     String profilePicUrl;
     favoriteShopsModel favoriteShops;
     garageModel myGarage;
+    taskModel myTask;
 
     public userModel() {
     }
 
-    public userModel(String email, String fullName, String mainCar, String profilePicUrl, favoriteShopsModel favoriteShops, garageModel myGarage) {
+    public userModel(String email, String fullName, String mainCar, String profilePicUrl, favoriteShopsModel favoriteShops, garageModel myGarage, taskModel myTask) {
         this.email = email;
         this.fullName = fullName;
         this.mainCar = mainCar;
         this.profilePicUrl = profilePicUrl;
         this.favoriteShops = favoriteShops;
         this.myGarage = myGarage;
+        this.myTask = myTask;
     }
 
     public String getEmail() {
@@ -72,4 +74,7 @@ public class userModel {
     }
 
 
+    public taskModel getMyTask() { return myTask; }
+
+    public void setMyTask(taskModel myTask) { this.myTask = myTask; }
 }

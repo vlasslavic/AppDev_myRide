@@ -51,17 +51,43 @@
         app:layout_constraintTop_toBottomOf="@+id/fieldTask"
         app:layout_constraintVertical_bias="0.055" />
 
-    <EditText
-        android:id="@+id/fieldCompany"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="404dp"
-        android:ems="10"
-        android:hint="Company"
-        android:inputType="textPassword"
+    <ImageView
+        android:id="@+id/imageViewer"
+        android:layout_width="175dp"
+        android:layout_height="174dp"
+        android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.684" />
+
+    <Button
+        android:id="@+id/selectCompany"
+        android:layout_width="112dp"
+        android:layout_height="54dp"
+        android:layout_margin="10dp"
+        android:text="Select Image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558" />
+
+    <Button
+        android:id="@+id/uploadCompany"
+        android:layout_width="112dp"
+        android:layout_height="54dp"
+        android:layout_margin="10dp"
+        android:text="Upload Image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.735" />
 
     <Button
         android:id="@+id/createTaskButton"
@@ -73,7 +99,22 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fieldLocation"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintVertical_bias="0.845" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Add Company Logo"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

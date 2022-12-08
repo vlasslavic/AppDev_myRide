@@ -36,9 +36,10 @@ public class RecyclerTaskAdapter extends RecyclerView.Adapter<viewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-//        Glide.with(mContext);
-//        holder.txtTask.setText(mtasks.get(position).getTask());
-//        holder.txtService.setText(mtasks.get(position).getServiceLocation();
+        Glide.with(mContext)
+                        .asBitmap().load(mtasks.get(position).getCompany()).into(holder.image3);
+        holder.txtTask.setText(mtasks.get(position).getTask());
+        holder.txtService.setText((mtasks.get(position).getServiceLocation()));
     }
 
     @Override
