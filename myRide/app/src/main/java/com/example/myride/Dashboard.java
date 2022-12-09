@@ -48,7 +48,7 @@ public class Dashboard extends AppCompatActivity {
     userModel currentUser;
     TextView textNickname, fullName, carsNumber;
     Button addCarBtn,myGarageBtn,googleMapsBtn;
-    ImageView carImage;
+    ImageView carImage,napaImg;
     String name;
 
     @Override
@@ -170,6 +170,14 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), GoogleMaps.class);
                 startActivity(i);
+            }
+        });
+        napaImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), NapaMaps.class);
+                startActivity(i);
+
             }
         });
 
