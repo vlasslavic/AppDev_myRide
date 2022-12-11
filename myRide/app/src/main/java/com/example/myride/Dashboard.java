@@ -59,6 +59,7 @@ public class Dashboard extends AppCompatActivity {
         myGarageBtn = findViewById(R.id.garageBtn);
         textNickname = findViewById(R.id.textNickname);
         fullName = findViewById(R.id.textFullName);
+        napaImg = findViewById(R.id.imageViewNapa);
         carsNumber = findViewById(R.id.textCars);
         carImage = findViewById(R.id.imageView8);
         googleMapsBtn = findViewById(R.id.mapsButton);
