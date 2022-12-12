@@ -61,6 +61,7 @@ public class Dashboard extends AppCompatActivity {
         fullName = findViewById(R.id.textFullName);
         carsNumber = findViewById(R.id.textCars);
         carImage = findViewById(R.id.imageView8);
+        napaImg = findViewById(R.id.imageViewNapa);
         googleMapsBtn = findViewById(R.id.mapsButton);
         FirebaseStorage storage = FirebaseStorage.getInstance();
 //        StorageReference storageRef = storage.getReference().child("uploads").child("users").child(mAuth.getCurrentUser().getUid());
