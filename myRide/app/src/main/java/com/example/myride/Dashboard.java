@@ -6,8 +6,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
@@ -170,8 +172,16 @@ public class Dashboard extends AppCompatActivity {
         googleMapsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), GoogleMaps.class);
-                startActivity(i);
+                try {
+                    // call the installed google maps lib
+                    Uri uri = Uri.parse("https://www.google.com/maps/dir/");
+                    Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(i);
+
+                }catch(ActivityNotFoundException e){
+
+                }
             }
         });
         napaImg.setOnClickListener(new View.OnClickListener() {

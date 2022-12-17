@@ -30,9 +30,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".GoogleMaps"
-            android:exported="false" />
-        <activity
             android:name=".ToDoList"
             android:exported="false" />
         <activity
