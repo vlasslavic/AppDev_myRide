@@ -6,6 +6,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,10 +21,8 @@ public class viewHolder extends RecyclerView.ViewHolder {
     public TextView crText;
     public TextView txtTask;
     public TextView txtService;
-    Button editBtn;
-    Button btnEdit;
-    public Button deleteBtn;
-    public Button btnDelete;
+    public ImageView editBtn;
+    public ImageView deleteBtn;
     LinearLayout parentLayout;
     LinearLayout taskLayout;
 
@@ -38,20 +37,9 @@ public class viewHolder extends RecyclerView.ViewHolder {
         image2 = itemView.findViewById(R.id.imageView2);
         image3 = itemView.findViewById(R.id.imageCompany);
         editBtn = itemView.findViewById(R.id.editBtn);
-        btnEdit = itemView.findViewById(R.id.btnedit);
         deleteBtn = itemView.findViewById(R.id.deleteBtn);
-        btnDelete = itemView.findViewById(R.id.btndelete);
         parentLayout = itemView.findViewById(R.id.parentid);
         taskLayout = itemView.findViewById(R.id.mainid);
 
-//        editBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                if (!validateForm()) {
-////                    return;
-////                }
-//
-//            }
-//        });
     }
 }

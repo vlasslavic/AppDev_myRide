@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myride.models.garageModel;
@@ -30,11 +31,15 @@ import com.example.myride.models.userModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.util.UUID;
@@ -52,10 +57,11 @@ public class AddCar extends AppCompatActivity {
     private final int CAMERA_PERMISSION_REQUEST_CODE = 12345;
     private final int CAMERA_PICTURE_REQUEST_CODE = 56789;
 
+    TextView title;
     Button addCarBtn;
     EditText make,model,year,registration,color,nickname;
     garageModel car= new garageModel();
-    DatabaseReference reff;
+    DatabaseReference reff, newReff;
 
 
     @Override
@@ -63,6 +69,7 @@ public class AddCar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_car);
         reff = FirebaseDatabase.getInstance().getReference().child("users");
+        title = findViewById(R.id.textView);
         addCarBtn=findViewById(R.id.addCarButton);
         make=findViewById(R.id.fieldMake);
         model=findViewById(R.id.fieldModel);
@@ -71,11 +78,51 @@ public class AddCar extends AppCompatActivity {
         registration=findViewById(R.id.fieldRegistration);
         color=findViewById(R.id.fieldColor);
         mAuth = FirebaseAuth.getInstance();
-
+        String messageToast = "Vehicle added successfully";
 
         FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
 
         storageReference = firebaseStorage.getReference().child("upload/users/"+mAuth.getCurrentUser().getUid());
+
+
+
+        String editNickname = getIntent().getStringExtra("nickname");
+        if (editNickname != null) {
+            title.setText("Edit Vehicle");
+            addCarBtn.setText("Save Vehicle");
+            messageToast = "Vehicle updated successfully";
+            newReff = reff.child(mAuth.getCurrentUser().getUid()).child("myGarage").child(editNickname);
+            newReff.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.child("make").getValue() != null) {
+                        make.setText(snapshot.child("make").getValue().toString());}
+                    if (snapshot.child("model").getValue() != null) {
+                        model.setText(snapshot.child("model").getValue().toString());}
+                    if (snapshot.child("year").getValue() != null) {
+                        year.setText(snapshot.child("year").getValue().toString());}
+                    if (snapshot.child("registration").getValue() != null) {
+                        registration.setText(snapshot.child("registration").getValue().toString());}
+                    if (snapshot.child("color").getValue() != null) {
+                        color.setText(snapshot.child("color").getValue().toString());}
+                    if (snapshot.child("picture").getValue() != null) {
+                        Picasso.get().load((snapshot.child("picture").getValue()).toString()).into(imagePreviw);
+                        }
+                    if (snapshot.child("nickname").getValue() != null) {
+                        nickname.setText(snapshot.child("nickname").getValue().toString());}
+                    else {
+                        Toast.makeText(getApplicationContext(), "Sorry we couldn't find your car, please try again.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                }
+            });
+
+        }
+
+
+
 
 //        Upload Image
         Button selectButton = findViewById(R.id.selectButton);
@@ -97,6 +144,7 @@ public class AddCar extends AppCompatActivity {
             }
         });
 
+        String finalMessageToast = messageToast;
         addCarBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -122,7 +170,7 @@ public class AddCar extends AppCompatActivity {
 
 //                reff.child().setValue(car);
                 Toast.makeText(getApplicationContext(),
-                        "Vehicle added successfully", Toast.LENGTH_SHORT).show();
+                        finalMessageToast.toString(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), Dashboard.class);
                 i.putExtra("key", mAuth.getCurrentUser());
                 startActivity(i);

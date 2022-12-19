@@ -62,6 +62,7 @@ public class MyGarage extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
              }
 
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -105,6 +106,8 @@ public class MyGarage extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.nav_search:
+//                        startActivity(new Intent(getApplicationContext(),GoogleMaps.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.nav_logout:
                         mAuth.signOut();

@@ -150,7 +150,7 @@ public class MyProfile extends AppCompatActivity {
 
                     user.setFullName(fullName.getText().toString());
 
-//Check wht fields were changed and update
+                //Check what fields were changed and update
                     if(user.getFullName()!=null){
                     reff.child("fullName").setValue(user.getFullName());}
                     if(user.getProfilePicUrl()!=null){
@@ -187,6 +187,8 @@ public class MyProfile extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.nav_search:
+//                        startActivity(new Intent(getApplicationContext(),GoogleMaps.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.nav_logout:
                         mAuth.signOut();
