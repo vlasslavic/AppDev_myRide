@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -34,16 +35,19 @@ public class MyGarage extends AppCompatActivity {
     FirebaseUser mUser = mAuth.getCurrentUser();
     DatabaseReference reff= FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid());
 
-    Button addCar;
+    Button addCar, editCar, deleteCar;
     ArrayList<garageModel> carsList;
     RecyclerView recyclerView;
     RecyclerViewAdapter adapter;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_garage);
         addCar=findViewById(R.id.addCarBtn2);
+        editCar = findViewById(R.id.editBtn);
+        deleteCar = findViewById(R.id.deleteBtn);
         carsList = new ArrayList<>();
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -85,8 +89,8 @@ public class MyGarage extends AppCompatActivity {
     }
 
 
-    private void displayNav(){
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+    private void displayNav() {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
         // Perform item selected listener
@@ -94,15 +98,14 @@ public class MyGarage extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch(item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.nav_profile:
-                        startActivity(new Intent(getApplicationContext(),MyProfile.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), MyProfile.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.nav_search:
                         return true;
@@ -110,8 +113,8 @@ public class MyGarage extends AppCompatActivity {
                         mAuth.signOut();
                         Toast.makeText(getApplicationContext(),
                                 "You are logged out.", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
                 }
                 return false;

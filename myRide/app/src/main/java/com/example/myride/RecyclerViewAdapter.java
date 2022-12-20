@@ -68,6 +68,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<viewHolder> {
 //
 //        });
 
+        //viewHolder vh = (viewHolder) holder;
+        //garageModel car =
+
+
+
+
     }
 
     public interface OnItemClickListener {

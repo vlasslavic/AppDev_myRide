@@ -106,6 +106,20 @@
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/imageView4" />
 
+    <Button
+        android:id="@+id/todoListBtn2"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/white"
+        android:text="View TodoList"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.817"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.259" />
+
     <TextView
         android:id="@+id/serviceHistoryBtn"
         android:layout_width="109dp"
@@ -122,6 +136,8 @@
         app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         tools:ignore="TouchTargetSizeCheck" />
+
+
 
     <ImageView
         android:id="@+id/imageView5"

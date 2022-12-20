@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -49,10 +50,11 @@ public class Dashboard extends AppCompatActivity {
 //    Button addCarBtn;
     userModel currentUser;
     TextView textNickname, fullName, carsNumber;
-    Button addCarBtn,myGarageBtn,googleMapsBtn;
+    Button addCarBtn,myGarageBtn,googleMapsBtn,todoList;
     ImageView carImage,napaImg;
     String name;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +68,7 @@ public class Dashboard extends AppCompatActivity {
         carImage = findViewById(R.id.imageView8);
         napaImg = findViewById(R.id.imageViewNapa);
         googleMapsBtn = findViewById(R.id.mapsButton);
+        todoList = findViewById(R.id.todoListBtn2);
         FirebaseStorage storage = FirebaseStorage.getInstance();
 //        StorageReference storageRef = storage.getReference().child("uploads").child("users").child(mAuth.getCurrentUser().getUid());
 //        StorageReference imagesRef = storageRef.child("uploads").child("users").child(name+".jpg");
@@ -192,6 +195,15 @@ public class Dashboard extends AppCompatActivity {
 
             }
         });
+
+        todoList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent i = new Intent(getApplicationContext(), ToDoList.class);
+                    startActivity(i);
+            }
+        });
+
 
     }
 

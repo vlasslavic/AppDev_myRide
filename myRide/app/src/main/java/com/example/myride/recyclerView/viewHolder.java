@@ -53,5 +53,12 @@ public class viewHolder extends RecyclerView.ViewHolder {
 //
 //            }
 //        });
+
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }
