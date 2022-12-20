@@ -40,6 +40,9 @@ public class RecyclerTaskAdapter extends RecyclerView.Adapter<viewHolder> {
                         .asBitmap().load(mtasks.get(position).getCompany()).into(holder.image3);
         holder.txtTask.setText(mtasks.get(position).getTask());
         holder.txtService.setText((mtasks.get(position).getServiceLocation()));
+
+
+
     }
 
     @Override

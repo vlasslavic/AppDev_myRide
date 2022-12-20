@@ -27,7 +27,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myride.models.garageModel;
-import com.example.myride.models.userModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -70,12 +69,12 @@ public class AddCar extends AppCompatActivity {
         setContentView(R.layout.activity_add_car);
         reff = FirebaseDatabase.getInstance().getReference().child("users");
         title = findViewById(R.id.textView);
-        addCarBtn=findViewById(R.id.addCarButton);
-        make=findViewById(R.id.fieldMake);
-        model=findViewById(R.id.fieldModel);
-        year=findViewById(R.id.fieldYear);
-        nickname=findViewById(R.id.fieldNickname);
-        registration=findViewById(R.id.fieldRegistration);
+        addCarBtn=findViewById(R.id.addTaskButton);
+        make=findViewById(R.id.nickname);
+        model=findViewById(R.id.serviceDetails);
+        year=findViewById(R.id.shopName);
+        nickname=findViewById(R.id.odometer);
+        registration=findViewById(R.id.status);
         color=findViewById(R.id.fieldColor);
         mAuth = FirebaseAuth.getInstance();
         String messageToast = "Vehicle added successfully";

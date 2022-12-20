@@ -107,7 +107,7 @@
         app:layout_constraintStart_toStartOf="@+id/imageView4" />
 
     <TextView
-        android:id="@+id/serviceHistoryBtn"
+        android:id="@+id/serviceHistory"
         android:layout_width="109dp"
         android:layout_height="23dp"
         android:layout_marginBottom="16dp"
@@ -121,7 +121,8 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        android:focusable="true" />
 
     <ImageView
         android:id="@+id/imageView5"

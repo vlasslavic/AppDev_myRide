@@ -8,52 +8,53 @@
     tools:layout_editor_absoluteX="-4dp"
     tools:layout_editor_absoluteY="69dp">
 
+
     <EditText
         android:id="@+id/nickname"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        android:hint="Nickname"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="572dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <EditText
+        android:id="@+id/serviceDetails"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:ems="10"
-        android:hint="Make"
+        android:hint="Title"
         android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/nickname"
+        app:layout_constraintVertical_bias="0.044" />
 
-    <EditText
-            android:id="@+id/serviceDetails"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="Model"
-            android:inputType="text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nickname"
-            app:layout_constraintVertical_bias="0.055" />
     <EditText
         android:id="@+id/shopName"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="Year"
-        android:inputType="number"
+        android:hint="Repair Shop Name"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/serviceDetails"
         app:layout_constraintVertical_bias="0.055" />
+
     <EditText
         android:id="@+id/odometer"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="Nickname"
-        android:inputType="text"
+        android:hint="Odometer"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -62,46 +63,17 @@
         app:layout_constraintVertical_bias="0.055" />
 
     <EditText
-        android:id="@+id/status"
+        android:id="@+id/serviceStatus"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Plate Number"
+        android:hint="Status"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/odometer" />
-
-    <EditText
-        android:id="@+id/fieldColor"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Color"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="305dp"
-        android:layout_height="63dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Add Vehicle"
-        android:textAlignment="viewStart"
-        android:textColor="@color/black"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.292"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
 
 
     <!--    <Button android:id="@+id/uploadButton"-->
@@ -112,43 +84,21 @@
 <!--        app:layout_constraintTop_toTopOf="parent"-->
 <!--        android:layout_margin="10dp"/>-->
 
-    <Button
-        android:id="@+id/selectButton"
-        android:layout_width="112dp"
-        android:layout_height="54dp"
-        android:layout_margin="10dp"
-        android:text="Select Image"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="305dp"
+        android:layout_height="63dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Add Task"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintHorizontal_bias="0.292"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787" />
-
-    <Button
-        android:id="@+id/uploadButton"
-        android:layout_width="112dp"
-        android:layout_height="54dp"
-        android:layout_margin="10dp"
-        android:text="Upload Image"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
-
-    <ImageView
-        android:id="@+id/imagePreview"
-        android:layout_width="168dp"
-        android:layout_height="127dp"
-        android:layout_margin="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.773"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintVertical_bias="0.037" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -166,13 +116,15 @@
         android:id="@+id/addTaskButton"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Add Vehicle"
+        android:text="Add Task"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.745" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

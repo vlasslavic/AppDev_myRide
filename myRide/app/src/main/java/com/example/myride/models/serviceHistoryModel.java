@@ -4,20 +4,40 @@ public class serviceHistoryModel {
     String shopId;
     String shopName;
     String shopAddress;
+    String nickname;
+    String serviceID;
     String serviceStatus;
     String serviceDetails;
-    Integer odometer;
+    String odometer;
 
     public serviceHistoryModel() {
     }
 
-    public serviceHistoryModel(String shopId, String shopName, String shopAddress, String serviceStatus, String serviceDetails, Integer odometer) {
+    public serviceHistoryModel(String serviceID,String nickname, String shopId, String shopName, String shopAddress, String serviceStatus, String serviceDetails, String odometer) {
+        this.serviceID = serviceID;
+        this.nickname = nickname;
         this.shopId = shopId;
         this.shopName = shopName;
         this.shopAddress = shopAddress;
         this.serviceStatus = serviceStatus;
         this.serviceDetails = serviceDetails;
         this.odometer = odometer;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getServiceID() {
+        return serviceID;
+    }
+
+    public void setServiceID(String serviceID) {
+        this.serviceID = serviceID;
     }
 
     public String getShopId() {
@@ -60,11 +80,11 @@ public class serviceHistoryModel {
         this.serviceDetails = serviceDetails;
     }
 
-    public Integer getOdometer() {
+    public String getOdometer() {
         return odometer;
     }
 
-    public void setOdometer(Integer odometer) {
+    public void setOdometer(String odometer) {
         this.odometer = odometer;
     }
 }

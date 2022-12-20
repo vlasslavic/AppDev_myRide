@@ -1,18 +1,19 @@
 package com.example.myride;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.myride.models.garageModel;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.myride.models.serviceHistoryModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,34 +25,43 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MyGarage extends AppCompatActivity {
+public class ServiceHistory extends AppCompatActivity {
     private final FirebaseAuth mAuth= FirebaseAuth.getInstance();
     FirebaseUser mUser = mAuth.getCurrentUser();
     DatabaseReference reff= FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid());
 
-    Button addCar;
-    ArrayList<garageModel> carsList;
+    Button addService;
+    ArrayList<serviceHistoryModel> serviceList;
     RecyclerView recyclerView;
-    RecyclerViewAdapter adapter;
+    TextView nickname;
+    RecyclerHistoryAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_garage);
-        addCar=findViewById(R.id.addService);
-        carsList = new ArrayList<>();
+        setContentView(R.layout.activity_service_history);
+        addService=findViewById(R.id.addService);
+        serviceList = new ArrayList<>();
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new RecyclerViewAdapter(carsList ,this);
+        String givenNickname = getIntent().getStringExtra("nickname");
+        adapter = new RecyclerHistoryAdapter(serviceList ,this,givenNickname);
         recyclerView.setAdapter(adapter);
+        nickname = findViewById(R.id.nickname);
 
-        reff.child("myGarage").addValueEventListener(new ValueEventListener() {
+
+        nickname.setText("Service History: "+givenNickname);
+        if (givenNickname != null) {
+            reff= FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid()).child("myGarage").child(givenNickname).child("serviceHistory");
+        }
+
+        reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
              for(DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                garageModel car = dataSnapshot.getValue(garageModel.class);
-                carsList.add(car);
+                serviceHistoryModel service = dataSnapshot.getValue(serviceHistoryModel.class);
+                serviceList.add(service);
                 }
                 adapter.notifyDataSetChanged();
              }
@@ -59,17 +69,16 @@ public class MyGarage extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-        addCar.setOnClickListener(new View.OnClickListener() {
+        addService.setOnClickListener(new View.OnClickListener() {
             @Override
 
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), AddCar.class);
+                Intent i = new Intent(getApplicationContext(), AddTask.class);
+                i.putExtra("nickname", givenNickname);
                 startActivity(i);
             }
         });
         displayNav();
-
-
     }
 
     private void displayNav(){

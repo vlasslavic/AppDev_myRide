@@ -58,28 +58,31 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnedit"
+            <ImageView
+                android:id="@+id/editBtn"
                 android:layout_width="match_parent"
-                android:layout_height="12dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/ic_edit_10"
-                android:layout_marginVertical="17dp"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black"
-                tools:src="@drawable/ic_edit" />
+                android:layout_marginEnd="7dp"
+                android:adjustViewBounds="false"
+                android:clickable="true"
+                android:cropToPadding="true"
+                android:focusable="true"
+                android:longClickable="true"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_edit" />
 
-            <Button
-                android:id="@+id/btndelete"
+            <ImageView
+                android:id="@+id/deleteBtn"
                 android:layout_width="match_parent"
-                android:layout_height="12dp"
-                android:layout_marginVertical="17dp"
-                android:layout_marginEnd="10dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:background="@drawable/ic_delete"
-                android:textColor="@color/black" />
+                android:layout_marginEnd="7dp"
+                android:clickable="true"
+                android:longClickable="false"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_delete"
+                android:focusable="true" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

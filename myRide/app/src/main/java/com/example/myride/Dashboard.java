@@ -48,7 +48,7 @@ public class Dashboard extends AppCompatActivity {
     DatabaseReference reff;
 //    Button addCarBtn;
     userModel currentUser;
-    TextView textNickname, fullName, carsNumber;
+    TextView textNickname,serviceHistory, fullName, carsNumber;
     Button addCarBtn,myGarageBtn,googleMapsBtn;
     ImageView carImage,napaImg;
     String name;
@@ -60,6 +60,7 @@ public class Dashboard extends AppCompatActivity {
         addCarBtn = findViewById(R.id.addCarBtn);
         myGarageBtn = findViewById(R.id.garageBtn);
         textNickname = findViewById(R.id.textNickname);
+        serviceHistory = findViewById(R.id.serviceHistory);
         fullName = findViewById(R.id.textFullName);
         napaImg = findViewById(R.id.imageViewNapa);
         carsNumber = findViewById(R.id.textCars);
@@ -167,6 +168,17 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), MyGarage.class);
                 startActivity(i);
+            }
+
+        });
+
+        serviceHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), ServiceHistory.class);
+                i.putExtra("nickname", textNickname.getText().toString());
+                startActivity(i);
+
             }
 
         });

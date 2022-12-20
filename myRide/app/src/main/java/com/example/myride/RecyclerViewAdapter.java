@@ -3,6 +3,7 @@ package com.example.myride;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +22,10 @@ import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<viewHolder> {
-    ArrayList<garageModel> mGarage = new ArrayList<>();
+    ArrayList<garageModel> mGarage = new ArrayList<garageModel>();
     private final FirebaseAuth mAuth= FirebaseAuth.getInstance();
     DatabaseReference reff= FirebaseDatabase.getInstance().getReference().child("users").child(mAuth.getCurrentUser().getUid());
     Context mContext;
@@ -58,6 +60,29 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<viewHolder> {
         // get the car nickname by positions
         String nickname = mGarage.get(position).getNickname();
 
+
+
+
+        holder.image2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(mContext, ServiceHistory.class);
+                i.putExtra("nickname", nickname);
+                mContext.startActivity(i);
+            }
+
+        });
+
+        holder.serviceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(mContext, ServiceHistory.class);
+                i.putExtra("nickname", nickname);
+                mContext.startActivity(i);
+            }
+
+        });
+
         holder.editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +99,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<viewHolder> {
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), nickname+" Deleted.", Toast.LENGTH_SHORT).show();
                 reff.child("myGarage").child(nickname).removeValue();
-                mGarage.remove(mGarage.get(position));
+                Intent i = new Intent(mContext, MyGarage.class);
+                mContext.startActivity(i);
             }
         });
 
