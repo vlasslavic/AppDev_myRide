@@ -100,6 +100,7 @@ public class ServiceHistory extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),MyProfile.class));
                         overridePendingTransition(0,0);
                         return true;
+                   
                     case R.id.nav_search:
 //                        startActivity(new Intent(getApplicationContext(),GoogleMaps.class));
                         overridePendingTransition(0,0);

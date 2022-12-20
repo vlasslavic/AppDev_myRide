@@ -92,6 +92,12 @@ public class Dashboard extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Dashboard.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.nav_add:
+                        Intent i = new Intent(getApplicationContext(), AddTask.class);
+                        i.putExtra("nickname", textNickname.getText().toString());
+                        startActivity(i);
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.nav_profile:
                         startActivity(new Intent(getApplicationContext(),MyProfile.class));
                         overridePendingTransition(0,0);
